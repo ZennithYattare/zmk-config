@@ -45,11 +45,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&bt BT_CLR           &none    &bt BT_NXT    &none       &none         &none                                                 &trans        &trans    &trans     &trans    &trans        &trans
-&kp ESCAPE         &kp EXCL      &kp AT            &kp HASH           &kp DOLLAR    &kp PERCENT                                  &kp CARET     &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans             &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3       &kp NUMBER_4  &kp N5                                       &kp NUMBER_6  &kp N7    &kp N8     &kp N9                &kp N0                 &trans
-&ext_power EP_TOG  &kp GRAVE     &ext_power EP_ON  &ext_power EP_OFF  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_PLAY_PAUSE    &trans  &kp PIPE      &kp BSLH  &none      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans
-                                                   &kp HOME           &kp END       &trans           &trans              &trans  &mo 3         &trans    &trans
+&bt BT_CLR  &none         &bt BT_NXT        &none              &sys_reset    &bootloader                                  &trans        &trans    &trans     &trans                &trans                 &trans
+&kp ESCAPE  &kp EXCL      &kp AT            &kp HASH           &kp DOLLAR    &kp PERCENT                                  &kp CARET     &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans      &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3       &kp NUMBER_4  &kp N5                                       &kp NUMBER_6  &kp N7    &kp N8     &kp N9                &kp N0                 &trans
+&trans      &kp GRAVE     &ext_power EP_ON  &ext_power EP_OFF  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_PLAY_PAUSE    &trans  &kp PIPE      &kp BSLH  &none      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans
+                                            &kp HOME           &kp END       &trans           &trans              &trans  &mo 3         &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -64,11 +64,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans                       &trans       &trans     &kp RG(L)  &trans          &trans           &trans
-&kp F1  &kp F2  &kp F3  &kp F4     &kp F5     &kp F6                       &kp F7       &kp F8     &kp F9     &kp F10         &kp F11          &kp F12
-&trans  &trans  &trans  &kp LC(D)  &kp LC(F)  &kp LC(G)                    &trans       &kp LEFT   &kp DOWN   &kp UP          &kp RIGHT        &kp MINUS
-&trans  &trans  &trans  &trans     &trans     &trans     &trans    &tog 4  &kp KP_PLUS  &kp EQUAL  &kp DEL    &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans
-                        &trans     &trans     &mo 3      &trans    &trans  &trans       &trans     &trans
+&trans  &trans  &trans  &trans     &trans     &trans                       &bootloader  &sys_reset  &kp RG(L)  &trans          &trans           &trans
+&kp F1  &kp F2  &kp F3  &kp F4     &kp F5     &kp F6                       &kp F7       &kp F8      &kp F9     &kp F10         &kp F11          &kp F12
+&trans  &trans  &trans  &kp LC(D)  &kp LC(F)  &kp LC(G)                    &trans       &kp LEFT    &kp DOWN   &kp UP          &kp RIGHT        &kp MINUS
+&trans  &trans  &trans  &trans     &trans     &trans     &trans    &tog 4  &kp KP_PLUS  &kp EQUAL   &kp DEL    &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans
+                        &trans     &trans     &mo 3      &trans    &trans  &trans       &trans      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
