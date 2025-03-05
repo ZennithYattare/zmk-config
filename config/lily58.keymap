@@ -30,6 +30,18 @@
 };
 
 / {
+
+    behaviors {
+        ht_tp: hold_tap_tap_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;                      // <---[[produces hold if held longer than tapping-term-ms]]
+            quick-tap-ms = <150>;                          // <---[[produces tap if released before quick-tap-ms]]
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
