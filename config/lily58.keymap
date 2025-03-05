@@ -23,7 +23,7 @@
         combo_esc {
             timeout-ms = <50>;
             key-positions = <38 39>;
-            layers = <3>
+            layers = <3>;
             bindings = <&mkp MCLK>;
         };
     };
