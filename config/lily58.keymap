@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1100
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 
 / {
@@ -37,11 +37,12 @@
     behaviors {
         ht_tp: hold_tap_tap_preferred {
             compatible = "zmk,behavior-hold-tap";
+            bindings = <&kp>, <&kp>;
+
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <280>;                      // <---[[produces hold if held longer than tapping-term-ms]]
             quick-tap-ms = <175>;                          // <---[[produces tap if released before quick-tap-ms]]
-            bindings = <&kp>, <&kp>;
         };
 
         ht_hp: hold_tap_hold_preferred {
@@ -49,6 +50,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
+            flavor = "hold-preferred";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
         };
@@ -116,10 +118,10 @@
 
         adjust_layer {
             bindings = <
-&none         &none           &none           &none          &none              &none                     &none      &none      &none               &none             &none      &none
-&kp LS(L)     &kp LC(H)       &kp LC(L)       &kp RS(RC(E))  &none              &none                     &none      &none      &none               &none             &kp RC(P)  &none
-&kp CAPSLOCK  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT    &none                     &kp RC(H)  &kp RC(J)  &kp RC(DOWN_ARROW)  &kp RC(UP_ARROW)  &none      &none
-&trans        &none           &none           &none          &kp LC(BACKSLASH)  &none   &none     &none   &kp LC(N)  &mkp LCLK  &mkp RCLK           &none             &none      &none
+&none                   &none           &none           &none          &none              &none                     &none      &none      &none               &none             &none      &none
+&kp LS(L)               &kp LC(H)       &kp LC(L)       &kp RS(RC(E))  &none              &none                     &none      &none      &none               &none             &kp RC(P)  &none
+&ht_hp LCTRL CAPSLOCK   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT    &none                     &kp RC(H)  &kp RC(J)  &kp RC(DOWN_ARROW)  &kp RC(UP_ARROW)  &none      &none
+&trans                  &none           &none           &none          &kp LC(BACKSLASH)  &none   &none     &none   &kp LC(N)  &mkp LCLK  &mkp RCLK           &none             &none      &none
                                               &kp LC(HOME)   &kp LC(END)        &trans  &trans    &trans  &trans     &trans     &trans
             >;
         };
